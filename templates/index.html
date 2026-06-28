@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubbles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-pill">
+            <a href="#add" data-view="add" class="active">Add</a>
+            <a href="#downloading" data-view="downloading">Downloading</a>
+        </div>
+    </nav>
+
+    <div class="stage">
+    <!-- Add view -->
+    <main class="container view active" id="view-add">
+        <h1>bubbles</h1>
+        <p class="subtitle">TorBox download manager</p>
+
+        <form class="magnet-form" id="magnet-form">
+            <input
+                type="text"
+                name="magnet"
+                id="magnet-input"
+                placeholder="Paste a magnet link…"
+                autocomplete="off"
+                required
+            >
+            <button type="submit">Add</button>
+        </form>
+        <p class="status" id="status"></p>
+    </main>
+
+    <!-- Downloading view -->
+    <main class="container view" id="view-downloading">
+        <h1>Downloading</h1>
+        <p class="subtitle">Active torrents</p>
+
+        <ul class="download-list" id="download-list">
+            <li class="empty">No active downloads.</li>
+        </ul>
+    </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

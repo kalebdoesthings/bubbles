@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubbles — downloading</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-pill">
+            <a href="/">Add</a>
+            <a href="/downloading">Downloading</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Downloading</h1>
+        <p class="subtitle">Active torrents</p>
+
+        <ul class="download-list" id="download-list">
+            <li class="empty">No active downloads.</li>
+            <li id="dummyStat"></li>
+        </ul>
+
+        <a class="back-link" href="/">← Add another</a>
+    </main>
+
+    <script src="{{ url_for('static', filename='downloading.js') }}"></script>
+</body>
+</html>
